@@ -1,0 +1,91 @@
+/* very simple layout + styles */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f4f7;
+  color: #111;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* headings */
+h1 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+}
+.hint {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+/* labels and inputs */
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+}
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* small helper row */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+  font-size: 13px;
+}
+.remember input { margin-right: 6px; }
+
+/* button */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #2b6cb0;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+/* links and note */
+.forgot, .note a { color: #2b6cb0; text-decoration: none; }
+.note { margin-top: 12px; font-size: 13px; color: #666; text-align: center; }
+
+/* focus for keyboard users */
+input:focus, button:focus {
+  outline: 2px solid #98c8ff;
+  outline-offset: 2px;
+}
+
+/* responsive minor tweak */
+@media (max-width: 420px) {
+  .card { padding: 16px; }
+}
