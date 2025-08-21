@@ -89,3 +89,7 @@ input:focus, button:focus {
 @media (max-width: 420px) {
   .card { padding: 16px; }
 }
+
+
+.error { color: #b91c1c; font-size:13px; margin-top:6px; }
+.is-invalid { border-color:#f87171; }
