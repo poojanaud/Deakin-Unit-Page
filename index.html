@@ -5,6 +5,38 @@
 <link rel="stylesheet" type="text/css" media="screen" href="main.css"/>
 </head>
 <body>
-<h1>SIT223-SIT753 - Professional Practice in IT</h1>
+    <h1>SIT223-SIT753 - Professional Practice in IT</h1>
+    <script type="application/json" id="news-data">
+        [
+          { "title": "Assessment 3.1GP Released",
+            "summary": "Start planning your sprint; read the brief carefully.", "date": "2025-08-12" },
+          { "title": "Guest Talk: Agile in Industry",
+            "summary": "Live session next week; Q&A at the end.", "date": "2025-08-08" },
+          { "title": "Repo Hygiene Tips",
+            "summary": "Branching, committing, and message style.", "date": "2025-08-03" }
+        ]
+    </script>
+    <script>
+(function(){
+  const container = document.getElementById('news-list');
+  if (!container) return;
+  try{
+    const items = JSON.parse(document.getElementById('news-data').textContent);
+    container.innerHTML = '';
+    items.forEach(item=>{
+      const card = document.createElement('article');
+      card.className = 'news-card';
+      card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p>${item.summary}</p>
+        <time datetime="${item.date}">
+          ${new Date(item.date).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'})}
+        </time>`;
+      container.appendChild(card);
+    });
+  }catch(e){ console.warn('Inline news failed', e); }
+})();
+    </script>
+
 </body>
 </html>
